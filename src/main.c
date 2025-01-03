@@ -6,7 +6,11 @@
 //      - Implement and test sonar sensor with UART
 //      - Implement and test CAN communication
 
+#include "stdio.h"
 #include "stm32f1xx_hal.h"
+
+/* semihosting Initializing */
+extern void initialise_monitor_handles(void);
 
 // void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -30,6 +34,8 @@ int main(void)
         
         // Delay for half a second (500ms)
         HAL_Delay(250);
+        initialise_monitor_handles();
+        printf("Test test\n\r");
     }
 }
 
